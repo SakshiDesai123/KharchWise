@@ -1,0 +1,1045 @@
+
+/* =========================================
+   KHARCHWISE — COMPLETE RESPONSIVE CSS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mint: #83D9A5;
+    --deep-green: #0B2923;
+    --white: #FFFFFF;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+    background: var(--deep-green);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: var(--mint);
+    text-decoration: none;
+}
+
+/* MAIN PAGE */
+
+.login-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 28px;
+}
+
+/* BLURRED BACKGROUND */
+
+.login-page::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: -25px;
+
+    background-image: url("/static/images/login-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(20px);
+    transform: scale(1.06);
+}
+
+.login-page::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background: rgba(3, 25, 21, 0.48);
+    pointer-events: none;
+}
+
+/* LEFT BRAND SECTION */
+
+.brand-section {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+/* COMPACT TRANSPARENT LOGO BOX */
+
+.logo-frame {
+    align-self: center;
+    width: fit-content;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 5px 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    margin-bottom: 0;
+    transform: translateY(-20px);
+}
+
+.brand-logo {
+    display: block;
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.logo-copy {
+    min-width: 0;
+    text-align: left;
+}
+
+.logo-copy h2 {
+    font-size: clamp(20px, 1.9vw, 28px);
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.logo-copy h2 span {
+    color: var(--mint);
+}
+
+.logo-copy p {
+    margin-top: 4px;
+    font-size: clamp(9px, 0.9vw, 12px);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* LARGE ROTATING PHOTO CAROUSEL */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: clamp(420px, 60vh, 550px);
+    perspective: 1100px;
+    margin-top: -2px;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.carousel-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: clamp(220px, 23vw, 310px);
+    height: clamp(350px, 52vh, 480px);
+
+    padding: 4px;
+
+    border: 2px solid rgba(255, 255, 255, 0.82);
+    border-radius: 27px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 38px rgba(0, 0, 0, 0.25);
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        transform 0.9s cubic-bezier(.2, .75, .25, 1),
+        opacity 0.9s ease,
+        filter 0.9s ease;
+}
+
+.carousel-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 21px;
+}
+
+/* LEFT PHOTO */
+
+.carousel-card.position-left {
+    transform: translate(-123%, -50%) scale(0.77) rotateY(9deg);
+    opacity: 0.82;
+    z-index: 1;
+    filter: brightness(0.80);
+}
+
+/* CENTER PHOTO */
+
+.carousel-card.position-center {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    filter: brightness(1);
+}
+
+/* RIGHT PHOTO */
+
+.carousel-card.position-right {
+    transform: translate(23%, -50%) scale(0.77) rotateY(-9deg);
+    opacity: 0.82;
+    z-index: 1;
+    filter: brightness(0.80);
+}
+
+/* HIDDEN PHOTOS */
+
+.carousel-card.position-hidden {
+    transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* QUOTE BELOW THE PHOTOS */
+
+.brand-quote {
+    text-align: center;
+    margin-top: -2px;
+    padding: 0 8px;
+}
+
+.brand-quote p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: clamp(19px, 1.8vw, 25px);
+    line-height: 1.3;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.brand-quote span {
+    display: block;
+    width: 95px;
+    height: 4px;
+    margin: 6px auto 0;
+
+    background: var(--mint);
+    border-radius: 50%;
+    transform: rotate(-4deg);
+}
+
+/* RIGHT LOGIN SECTION */
+
+.auth-section {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    transform: translateX(-50px);
+}
+
+/* GLASS LOGIN CARD */
+
+.auth-card {
+    width: 100%;
+    max-width: 435px;
+    padding: 27px 26px;
+
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    border-radius: 27px;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    backdrop-filter: blur(24px) saturate(125%);
+    -webkit-backdrop-filter: blur(24px) saturate(125%);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* LOGIN HEADER */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.welcome {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.auth-header h1 {
+    font-size: clamp(31px, 2.7vw, 39px);
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.auth-header h1 span {
+    color: var(--mint);
+}
+
+.tagline {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.5;
+}
+
+/* SIGN IN / CREATE ACCOUNT TABS */
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.auth-tab {
+    min-width: 0;
+    min-height: 42px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    background: transparent;
+    color: white;
+    font-size: 13px;
+}
+
+.auth-tab.active {
+    border-color: rgba(255, 255, 255, 0.60);
+    background: rgba(131, 217, 165, 0.20);
+    box-shadow: inset 0 -3px 0 var(--mint);
+    font-weight: 700;
+}
+
+/* LOGIN FORM */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+/* INPUT BOXES */
+
+.input-box {
+    min-width: 0;
+    min-height: 47px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.input-box:focus-within {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.input-box > span {
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    height: 43px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+    font-size: 13px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.password-toggle {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 4px;
+}
+
+/* REMEMBER ME AND FORGOT PASSWORD */
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.remember input {
+    accent-color: var(--mint);
+    width: 16px;
+    height: 16px;
+}
+
+/* PRIMARY SIGN IN BUTTON */
+
+.primary-button {
+    width: 100%;
+    min-height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(110deg, #83E9B0, #00C995);
+    color: #052D24;
+
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.primary-button span:last-child {
+    font-size: 23px;
+}
+
+.form-message {
+    color: var(--mint);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+/* DIVIDER */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin: 14px 0 11px;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.46);
+}
+
+.divider p {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* GOOGLE AND APPLE BUTTONS */
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.social-button {
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.065);
+    color: white;
+    font-size: 12px;
+}
+
+.social-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.social-logo {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.apple-logo {
+    color: white;
+}
+
+/* ACCOUNT SWITCH LINK */
+
+.account-switch {
+    margin-top: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.account-switch button {
+    border: none;
+    background: transparent;
+    color: var(--mint);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* SHORT LAPTOP SCREENS */
+
+@media (min-width: 761px) and (max-height: 800px) {
+    .login-page {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .brand-section {
+        gap: 1px;
+    }
+
+    .logo-frame {
+        padding: 4px 9px;
+    }
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+
+    .carousel {
+        height: 51vh;
+        min-height: 330px;
+    }
+
+    .carousel-card {
+        width: clamp(210px, 22vw, 290px);
+        height: min(48vh, 420px);
+        min-height: 300px;
+    }
+
+    .brand-quote {
+        margin-top: -2px;
+    }
+
+    .brand-quote p {
+        font-size: 19px;
+    }
+
+    .auth-card {
+        padding: 20px 22px;
+    }
+
+    .auth-header {
+        margin-bottom: 10px;
+    }
+
+    .auth-tabs {
+        margin-bottom: 9px;
+    }
+
+    .login-form {
+        gap: 7px;
+    }
+
+    .input-box {
+        min-height: 40px;
+    }
+
+    .input-box input {
+        height: 37px;
+    }
+
+    .primary-button {
+        min-height: 42px;
+    }
+
+    .divider {
+        margin: 9px 0 7px;
+    }
+
+    .social-button {
+        min-height: 37px;
+    }
+
+    .account-switch {
+        margin-top: 7px;
+    }
+}
+
+/* MOBILE RESPONSIVE LAYOUT */
+
+@media (max-width: 760px) {
+    .login-page {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+        gap: 17px;
+
+        padding: 16px 13px 24px;
+    }
+
+    .brand-section {
+        gap: 5px;
+    }
+
+    .logo-frame {
+        align-self: center;
+        width: fit-content;
+        max-width: 100%;
+
+        min-height: 66px;
+        gap: 9px;
+        padding: 6px 10px;
+    }
+
+    .brand-logo {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
+
+    .logo-copy h2 {
+        font-size: 20px;
+    }
+
+    .logo-copy p {
+        font-size: 9px;
+    }
+
+    .carousel {
+        height: clamp(380px, 48vh, 460px);
+        margin-top: 0;
+    }
+
+    .carousel-card {
+        width: min(82vw, 340px);
+        height: min(44vh, 420px);
+        min-height: 300px;
+    }
+
+    .brand-quote {
+        margin-top: -4px;
+    }
+
+    .brand-quote p {
+        font-size: 19px;
+    }
+
+    .auth-section {
+        transform: none;
+    }
+
+    .auth-card {
+        width: 100%;
+        max-width: 440px;
+        padding: 23px 19px;
+    }
+
+    .auth-header h1 {
+        font-size: 34px;
+    }
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 390px) {
+    .login-page {
+        padding: 13px 9px 22px;
+        gap: 14px;
+    }
+
+    .logo-frame {
+        gap: 7px;
+        padding: 5px 8px;
+    }
+
+    .brand-logo {
+        width: 41px;
+        height: 41px;
+        flex-basis: 41px;
+    }
+
+    .logo-copy h2 {
+        font-size: 18px;
+    }
+
+    .logo-copy p {
+        font-size: 8px;
+    }
+
+    .carousel {
+        height: 330px;
+    }
+
+    .carousel-card {
+        width: min(76vw, 280px);
+        height: 270px;
+        min-height: 0;
+    }
+
+    .carousel-card.position-left {
+        transform: translate(-98%, -50%) scale(0.72) rotateY(8deg);
+    }
+
+    .carousel-card.position-right {
+        transform: translate(-2%, -50%) scale(0.72) rotateY(-8deg);
+    }
+
+    .auth-card {
+        padding: 18px 14px;
+    }
+}
+
+/* REDUCE MOTION IF REQUESTED BY DEVICE */
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-card {
+        transition-duration: 0.01ms;
+    }
+}
+
+/* =========================================
+   KHARCHWISE — CINEMATIC LOGIN ENTRANCE
+   Preserve existing layout and branding
+   ========================================= */
+
+/* Logo enters first */
+.logo-frame {
+    animation: kw-logo-enter 900ms cubic-bezier(.2, .75, .25, 1)
+        150ms both;
+}
+
+@keyframes kw-logo-enter {
+    from {
+        opacity: 0;
+        translate: 0 22px;
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+        filter: blur(0);
+    }
+}
+
+/* Carousel fades in after the logo */
+.carousel {
+    animation: kw-carousel-enter 1000ms cubic-bezier(.2, .75, .25, 1)
+        650ms both;
+}
+
+@keyframes kw-carousel-enter {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Reveal photos once in sequence without overriding their positions */
+.carousel-card img {
+    animation: kw-photo-enter 900ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.carousel-card:nth-child(1) img {
+    animation-delay: 850ms;
+}
+
+.carousel-card:nth-child(2) img {
+    animation-delay: 1100ms;
+}
+
+.carousel-card:nth-child(3) img {
+    animation-delay: 1350ms;
+}
+
+.carousel-card:nth-child(4) img {
+    animation-delay: 1600ms;
+}
+
+.carousel-card:nth-child(5) img {
+    animation-delay: 1850ms;
+}
+
+@keyframes kw-photo-enter {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        scale: .94;
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        scale: 1;
+    }
+}
+
+/* Quote appears after the carousel */
+.brand-quote {
+    animation: kw-quote-enter 750ms ease 1900ms both;
+}
+
+@keyframes kw-quote-enter {
+    from {
+        opacity: 0;
+        translate: 0 14px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* Login card glides in from the right */
+.auth-card {
+    animation: kw-card-enter 950ms cubic-bezier(.2, .75, .25, 1)
+        1750ms both;
+}
+
+@keyframes kw-card-enter {
+    from {
+        opacity: 0;
+        translate: 42px 0;
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+        filter: blur(0);
+    }
+}
+
+/* Reveal the card contents in order */
+.auth-header > *,
+.auth-tabs,
+.login-form > *,
+.divider,
+.social-buttons > *,
+.account-switch {
+    opacity: 0;
+    animation: kw-content-enter 650ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+/* Welcome, heading, and subtitle */
+.auth-header > :nth-child(1) {
+    animation-delay: 2200ms;
+}
+
+.auth-header > :nth-child(2) {
+    animation-delay: 2350ms;
+}
+
+.auth-header > :nth-child(3) {
+    animation-delay: 2500ms;
+}
+
+/* Sign-in and create-account tabs */
+.auth-tabs {
+    animation-delay: 2650ms;
+}
+
+/* Email, password, options, button, and form message */
+.login-form > :nth-child(1) {
+    animation-delay: 2800ms;
+}
+
+.login-form > :nth-child(2) {
+    animation-delay: 2950ms;
+}
+
+.login-form > :nth-child(3) {
+    animation-delay: 3100ms;
+}
+
+.login-form > :nth-child(4) {
+    animation-delay: 3250ms;
+}
+
+.login-form > :nth-child(5) {
+    animation-delay: 3400ms;
+}
+
+/* Social login section */
+.divider {
+    animation-delay: 3550ms;
+}
+
+.social-buttons > :nth-child(1) {
+    animation-delay: 3700ms;
+}
+
+.social-buttons > :nth-child(2) {
+    animation-delay: 3850ms;
+}
+
+.account-switch {
+    animation-delay: 4000ms;
+}
+
+@keyframes kw-content-enter {
+    from {
+        opacity: 0;
+        translate: 0 13px;
+        filter: blur(3px);
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+        filter: blur(0);
+    }
+}
+
+/* Gentle hover polish after entrance */
+.primary-button,
+.social-button,
+.auth-tab {
+    transition:
+        background-color 250ms ease,
+        box-shadow 250ms ease,
+        border-color 250ms ease;
+}
+
+.primary-button:hover {
+    box-shadow: 0 7px 22px rgba(0, 201, 149, .2);
+}
+
+.auth-tab,
+.social-button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile: login card rises gently from below */
+@media (max-width: 760px) {
+    .auth-card {
+        animation-name: kw-card-enter-mobile;
+    }
+
+    @keyframes kw-card-enter-mobile {
+        from {
+            opacity: 0;
+            translate: 0 26px;
+            filter: blur(5px);
+        }
+        to {
+            opacity: 1;
+            translate: 0 0;
+            filter: blur(0);
+        }
+    }
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+    .logo-frame,
+    .carousel,
+    .carousel-card img,
+    .brand-quote,
+    .auth-card,
+    .auth-header > *,
+    .auth-tabs,
+    .login-form > *,
+    .divider,
+    .social-buttons > *,
+    .account-switch {
+        animation: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        translate: none !important;
+        scale: 1 !important;
+    }
+
+    .carousel-card {
+        transition-duration: 0.01ms !important;
+    }
+}

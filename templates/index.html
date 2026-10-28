@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KharchWise | Your Money. Your Plan. Your Future.</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<main class="login-page">
+
+    <section class="brand-section">
+
+        <!-- Compact transparent logo and brand name -->
+        <div class="logo-frame">
+            <img src="/static/images/kharchwise-logo.png"
+                 alt="KharchWise logo"
+                 class="brand-logo">
+
+            <div class="logo-copy">
+                <h2>Kharch<span>Wise</span></h2>
+                <p>Your money. Your plan. Your future.</p>
+            </div>
+        </div>
+
+        <!-- Rotating photos -->
+        <div class="carousel">
+            <div class="carousel-track">
+
+                <div class="carousel-card">
+                    <img src="/static/images/carousel-salary.png"
+                         alt="Plan your salary">
+                </div>
+
+                <div class="carousel-card">
+                    <img src="/static/images/carousel-savings.png"
+                         alt="Build your savings">
+                </div>
+
+                <div class="carousel-card">
+                    <img src="/static/images/carousel-expenses.png"
+                         alt="Track your expenses">
+                </div>
+
+                <div class="carousel-card">
+                    <img src="/static/images/carousel-bills.png"
+                         alt="Manage your bills">
+                </div>
+
+                
+
+                <div class="carousel-card">
+                    <img src="/static/images/carousel-freedom.png"
+                         alt="Financial freedom">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="brand-quote">
+            <p>Better planning today<br>for a brighter tomorrow.</p>
+            <span></span>
+        </div>
+
+    </section>
+
+    <section class="auth-section">
+        <div class="auth-card">
+
+            <header class="auth-header">
+                <p class="welcome">Welcome to</p>
+                <h1>Kharch<span>Wise</span></h1>
+                <p class="tagline">Your money. Your plan. Your future.</p>
+            </header>
+
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" id="signin-tab">
+                    Sign In
+                </button>
+                <button type="button" class="auth-tab" id="signup-tab">
+                    Create Account
+                </button>
+            </div>
+
+            <form id="auth-form" class="login-form">
+
+                <label class="input-box">
+                    <span aria-hidden="true">✉</span>
+                    <input type="email" id="email"
+                           placeholder="Email address"
+                           autocomplete="email" required>
+                </label>
+
+                <label class="input-box">
+                    <span aria-hidden="true">♙</span>
+                    <input type="password" id="password"
+                           placeholder="Password"
+                           autocomplete="current-password" required>
+                    <button type="button" id="password-toggle"
+                            class="password-toggle"
+                            aria-label="Show password">◉</button>
+                </label>
+
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" id="forgot-password">Forgot password?</a>
+                </div>
+
+                <button class="primary-button" type="submit">
+                    <span id="submit-label">Sign In</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p id="form-message" class="form-message" role="status"></p>
+            </form>
+
+            <div class="divider">
+                <span></span>
+                <p>or continue with</p>
+                <span></span>
+            </div>
+
+            <div class="social-buttons">
+
+                <button type="button" class="social-button" id="google-button">
+                    <svg viewBox="0 0 48 48" class="social-logo" aria-hidden="true">
+                        <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-1.9 4.6-4.1 6v5h6.6c3.9-3.6 6.1-8.7 6.1-14.7Z"/>
+                        <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5c-1.8 1.2-4.1 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.2C9.2 39.5 16 44 24 44Z"/>
+                        <path fill="#FBBC05" d="M12.6 27.7a12 12 0 0 1 0-7.4v-5.2H5.8a20 20 0 0 0 0 17.8l6.8-5.2Z"/>
+                        <path fill="#EA4335" d="M24 11.9c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6 29.5 4 24 4 16 4 9.2 8.5 5.8 15.1l6.8 5.2c1.6-4.8 6.1-8.4 11.4-8.4Z"/>
+                    </svg>
+                    <span>Continue with Google</span>
+                </button>
+
+                <button type="button" class="social-button" id="apple-button">
+                    <svg viewBox="0 0 24 24"
+                         class="social-logo apple-logo"
+                         aria-hidden="true">
+                        <path fill="currentColor" d="M16.37 12.2c.02 2.1 1.84 2.8 1.86 2.81-.02.05-.29 1.01-.96 2-.58.85-1.18 1.69-2.13 1.71-.93.02-1.23-.55-2.29-.55-1.05 0-1.39.53-2.27.57-.91.03-1.6-.92-2.18-1.77-1.19-1.72-2.1-4.87-.88-7 .61-1.06 1.7-1.73 2.88-1.75.9-.02 1.75.61 2.29.61.53 0 1.53-.76 2.58-.65.44.02 1.69.18 2.49 1.35-.06.04-1.49.87-1.48 2.67ZM14.68 5.87c.47-.57.79-1.36.7-2.15-.68.03-1.5.45-1.99 1.02-.44.51-.83 1.31-.72 2.08.76.06 1.54-.39 2.01-.95Z"/>
+                    </svg>
+                    <span>Continue with Apple</span>
+                </button>
+
+            </div>
+
+            <p class="account-switch">
+                <span id="account-switch-text">New to KharchWise?</span>
+                <button type="button" id="account-switch-button">
+                    Create an account
+                </button>
+            </p>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

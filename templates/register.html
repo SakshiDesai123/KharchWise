@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#062b22">
+    <meta name="description" content="Create your KharchWise account to plan your salary, track expenses, manage bills, and grow your savings.">
+
+    <title>Create Account | KharchWise</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/register.css') }}">
+
+    <script src="{{ url_for('static', filename='js/register.js') }}" defer></script>
+</head>
+
+<body>
+    <main class="register-page">
+
+        <div class="ambient ambient-one" aria-hidden="true"></div>
+        <div class="ambient ambient-two" aria-hidden="true"></div>
+
+        <!-- LEFT SIDE: BRAND AND ANIMATED FINANCIAL VISUALS -->
+        <section class="visual-section" aria-label="Discover KharchWise">
+
+            <a class="brand"
+               href="{{ url_for('home') }}"
+               aria-label="KharchWise home">
+
+                <img
+                    src="{{ url_for('static', filename='images/kharchwise-logo.png') }}"
+                    alt="KharchWise logo">
+
+                <span class="brand-copy">
+                    <strong>Kharch<span>Wise</span></strong>
+                    <small>Your money. Your plan. Your future.</small>
+                </span>
+            </a>
+
+            <div class="visual-content">
+
+                <p class="visual-eyebrow">
+                    More than just tracking.
+                </p>
+
+                <h1 class="visual-title">
+                    Build better money habits.<br>
+                    <span>One step at a time.</span>
+                </h1>
+
+                <div class="title-underline" aria-hidden="true"></div>
+
+                <!-- Each card enters from the right in sequence. -->
+                <div class="money-showcase" aria-label="KharchWise features">
+
+                    <!-- Salary planning -->
+                    <article class="money-card salary-card">
+                        <img
+                            src="{{ url_for('static', filename='images/salary.png') }}"
+                            alt="Salary planning and savings illustration">
+                    </article>
+
+                        
+                    <!-- Expense tracking -->
+                    <article class="money-card expenses-card">
+                        <img
+                            src="{{ url_for('static', filename='images/expense.png') }}"
+                            alt="Expense tracking illustration">
+
+                        
+                    </article>
+
+                    <!-- Bill management -->
+                    <article class="money-card bills-card">
+                        <img
+                            src="{{ url_for('static', filename='images/bills.png') }}"
+                            alt="Bill and payment management illustration">
+
+                    </article>
+
+                    <!-- Savings goals -->
+                    <article class="money-card savings-card">
+                        <img
+                            src="{{ url_for('static', filename='images/saving.png') }}"
+                            alt="Savings goals illustration">
+                    </article>
+
+                </div>
+
+                <p class="visual-quote">
+                    “Better money habits today<br>
+                    for a brighter tomorrow.”
+                </p>
+
+            </div>
+        </section>
+
+        <!-- RIGHT SIDE: CREATE ACCOUNT FORM -->
+        <section class="form-section" aria-label="Create your account">
+
+            <div class="register-card">
+
+                <header class="form-header">
+                    <p class="welcome-label">
+                        YOUR FINANCIAL JOURNEY STARTS HERE
+                    </p>
+
+                    <h2>Create your <span>account</span></h2>
+
+                    <p>
+                        Join KharchWise and take control of your money.
+                    </p>
+                </header>
+
+                
+                <div class="social-login">
+
+                    <button class="social-button google-button"
+                            type="button" id="google-register">
+
+                        <svg class="social-logo google-logo"
+                            viewBox="0 0 48 48"
+                            aria-hidden="true">
+                            <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.9 6.1-15z"/>
+                            <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5.1c-1.8 1.2-4.1 2-6.9 2-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44z"/>
+                            <path fill="#FBBC05" d="M12.6 27.7a12 12 0 0 1 0-7.4V15H5.8a20 20 0 0 0 0 17.9z"/>
+                            <path fill="#EA4335" d="M24 11.9c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6 29.5 4 24 4A20 20 0 0 0 5.8 15l6.8 5.3c1.6-4.8 6.1-8.4 11.4-8.4z"/>
+                        </svg>
+
+                        <span>Continue with Google</span>
+                    </button>
+
+                    <button class="social-button apple-button"
+                            type="button" id="apple-register">
+
+                        <svg class="social-logo apple-logo"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M16.4 12.8c0-2.2 1.8-3.3 1.9-3.4a4.1 4.1 0 0 0-3.2-1.7c-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-3-.8a4.4 4.4 0 0 0-3.7 2.2c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.5 2.2 2.6 2.2 1 0 1.4-.7 2.7-.7s1.7.7 2.8.7c1.1 0 1.8-1 2.5-2.1a9.5 9.5 0 0 0 1.1-2.3 3.8 3.8 0 0 1-2.4-3.8zM14.1 6.2A4 4 0 0 0 15 3a4.2 4.2 0 0 0-2.7 1.4 3.8 3.8 0 0 0-1 3 3.5 3.5 0 0 0 2.8-1.2z"/>
+                        </svg>
+
+                        <span>Continue with Apple</span>
+                    </button>
+
+                </div>
+
+
+                <div class="separator" aria-hidden="true">
+                    <span></span>
+                    <p>or create with email and phone</p>
+                    <span></span>
+                </div>
+
+                <!-- Registration fields -->
+                <form id="register-form" novalidate>
+
+                    <div class="field-group">
+                        <label for="full-name">Full name</label>
+
+                        <div class="input-wrap">
+                            <span class="field-icon" aria-hidden="true">♙</span>
+
+                            <input
+                                id="full-name"
+                                name="full_name"
+                                type="text"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <small
+                            class="field-error"
+                            id="name-error"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="register-email">Email address</label>
+
+                        <div class="input-wrap">
+                            <span class="field-icon" aria-hidden="true">✉</span>
+
+                            <input
+                                id="register-email"
+                                name="email"
+                                type="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                        <small
+                            class="field-error"
+                            id="email-error"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="register-password">Create password</label>
+
+                        <div class="input-wrap">
+                            <span class="field-icon" aria-hidden="true">♙</span>
+
+                            <input
+                                id="register-password"
+                                name="password"
+                                type="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                                aria-describedby="password-rules">
+
+                            <button
+                                class="password-toggle"
+                                id="toggle-password"
+                                type="button"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                                ◉
+                            </button>
+                        </div>
+
+                        <div class="password-rules" id="password-rules">
+                            <p class="rule" data-rule="length">
+                                ○ At least 8 characters
+                            </p>
+
+                            <p class="rule" data-rule="letter">
+                                ○ At least one letter
+                            </p>
+
+                            <p class="rule" data-rule="number">
+                                ○ At least one number
+                            </p>
+                        </div>
+
+                        <small
+                            class="field-error"
+                            id="password-error"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="register-phone">Mobile number</label>
+
+                        <div class="input-wrap phone-wrap">
+                            <span class="field-icon" aria-hidden="true">▯</span>
+
+                            <span
+                                class="country-code"
+                                aria-label="India country code">
+                                🇮🇳 +91
+                            </span>
+
+                            <input
+                                id="register-phone"
+                                name="phone"
+                                type="tel"
+                                inputmode="numeric"
+                                placeholder="10-digit mobile number"
+                                autocomplete="tel-national"
+                                maxlength="10"
+                                pattern="[0-9]{10}"
+                                required>
+                        </div>
+
+                        <small class="phone-hint">
+                            We'll use this number for verification when enabled.
+                        </small>
+
+                        <small
+                            class="field-error"
+                            id="phone-error"></small>
+                    </div>
+
+                    <!-- Terms and privacy consent -->
+                    <label class="terms-row" for="accept-terms">
+                        <input
+                            type="checkbox"
+                            id="accept-terms"
+                            name="accept_terms"
+                            required>
+
+                        <span>
+                            I agree to the
+                            <a
+                                href="#"
+                                class="policy-link"
+                                data-policy="terms">
+                                Terms of Service
+                            </a>
+                            and
+                            <a
+                                href="#"
+                                class="policy-link"
+                                data-policy="privacy">
+                                Privacy Policy
+                            </a>.
+                        </span>
+                    </label>
+
+                    <small
+                        class="field-error"
+                        id="terms-error"></small>
+
+                    <!-- Create account action -->
+                    <button class="create-button" type="submit">
+                        <span>Create Account</span>
+                        <span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="register-message"
+                        role="status"
+                        aria-live="polite"></p>
+
+                </form>
+
+                <p class="signin-prompt">
+                    Already have an account?
+                    <a href="{{ url_for('home') }}">Sign In</a>
+                </p>
+
+                <p class="secure-note">
+                    <span aria-hidden="true">✦</span>
+                    Your financial journey, at your pace.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
